@@ -1,28 +1,59 @@
-# Getting Started
+# Помощник огородника
+### _Пет-проект, который ждет прекрасное будущее (надеюсь)_
 
-### Reference Documentation
-For further reference, please consider the following sections:
+**Возможности:**
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/3.3.2/maven-plugin)
-* [Create an OCI image](https://docs.spring.io/spring-boot/3.3.2/maven-plugin/build-image.html)
-* [Spring Data JPA](https://docs.spring.io/spring-boot/docs/3.3.2/reference/htmlsingle/index.html#data.sql.jpa-and-spring-data)
-* [Spring Web](https://docs.spring.io/spring-boot/docs/3.3.2/reference/htmlsingle/index.html#web)
-* [Thymeleaf](https://docs.spring.io/spring-boot/docs/3.3.2/reference/htmlsingle/index.html#web.servlet.spring-mvc.template-engines)
+✔ создание/удаление пользователя, реадактрирование данных пользователя.
 
-### Guides
-The following guides illustrate how to use some features concretely:
+**<details><summary>Дока</summary>**
 
-* [Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/)
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
-* [Handling Form Submission](https://spring.io/guides/gs/handling-form-submission/)
+```java
+Главная страница
 
-### Maven Parent overrides
+http://localhost:8080/garden
+```
 
-Due to Maven's design, elements are inherited from the parent POM to the project POM.
-While most of the inheritance is fine, it also inherits unwanted elements like `<license>` and `<developers>` from the parent.
-To prevent this, the project POM contains empty overrides for these elements.
-If you manually switch to a different parent and actually want the inheritance, you need to remove those overrides.
+```java
+User:
 
+{
+"id":"id",
+"name":"name",
+"age":"age",
+"climate_zone":"climate_zone",
+"geolocation":"geolocation",
+"description":"description",
+"lastVisit":"lastVisit",
+}
+```
+
+**`GET`**
+> **/garden/user?id** - вывести информацию о пользователе по **id**
+
+**`POST`**
+> **/garden/user** - создать нового пользователя
+
+**`PUT`**
+> **/garden/user?id** - изменить информацию о пользователе по **id**
+
+**`DELETE`**
+> **/garden/user?id** -удалить пользователя по **id**
+
+
+</details>
+
+**<details><summary>Запуск приложения</summary>**
+
+- Открыть приложение через Idea.
+
+- Прикрепить БД к нашему приложению:
+    - Создать в PostgreSql БД <<имя бд>>.
+    - Поменять параметры в application.yml:
+<p align="center"><img  src="./assets_README/application.PNG" width="70%"></p>
+- Запустить `GardenerApplication.java.`
+
+</details>
+
+**Стек технологий**
+
+Java 21, Spring JPA, Maven, PostgresSQL, Thymeleaf, Postman.
